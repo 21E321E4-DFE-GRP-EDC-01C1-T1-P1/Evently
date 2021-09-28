@@ -26,10 +26,11 @@
 
 # Executando o docker-compose.yml
  #para roder os services abaixo
- #docker-compose up -d
+  #docker-compose up -d
 
  #para terminar os services abaixo
- #docker-compose down 
+  #docker-compose down 
+  Adminer (http://localhost:8080)
 
   # Rodando o migration
   $ npx sequelize-cli db:migrate
