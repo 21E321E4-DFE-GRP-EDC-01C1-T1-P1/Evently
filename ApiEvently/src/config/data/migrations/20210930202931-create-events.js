@@ -8,14 +8,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      day: {
-        type: Sequelize.DATEONLY
-      },
-      endTime: {
-        type: Sequelize.DATEONLY
-      },
-      starTime: {
-        type: Sequelize.DATEONLY
+      name: {
+        type: Sequelize.STRING
       },
       maxParticipants: {
         type: Sequelize.INTEGER
@@ -23,22 +17,28 @@ module.exports = {
       numbParticipants: {
         type: Sequelize.INTEGER
       },
-      neighborhood: {
-        type: Sequelize.STRING(50)
+      day: {
+        type: Sequelize.DATEONLY
       },
-      city: {
-        type: Sequelize.STRING(50)
+      startTime: {
+        type: Sequelize.DATEONLY
+      },
+      endTime: {
+        type: Sequelize.DATEONLY
       },
       waitEvent: {
-        type: Sequelize.BOOLEAN
-      },
-      confirmEvent: {
         type: Sequelize.BOOLEAN
       },
       ActivityId: { 
         allowNull: false,
         type: Sequelize.INTEGER, 
         references: {model: 'Activities', key: 'id'},
+        onDelete:'CASCADE'
+      },
+      AddressId: { 
+        allowNull: false,
+        type: Sequelize.INTEGER, 
+        references: {model: 'Addresses', key: 'id'},
         onDelete:'CASCADE'
       },
       createdAt: {

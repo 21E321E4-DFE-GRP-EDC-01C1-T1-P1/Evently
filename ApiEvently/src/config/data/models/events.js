@@ -10,20 +10,19 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Events.belongsTo(models.Activities),
-      Events.belongsToMany(models.Users, { through: 'UsersActivities' })
+      Events.belongsToMany(models.Users, { through: 'UserActivities' })
+      Events.belongsTo(models.Address)
+      Events.belongsTo(models.Activity)
     }
   };
   Events.init({
-    day: DataTypes.DATEONLY,
-    endTime: DataTypes.DATEONLY,
-    starTime: DataTypes.DATEONLY,
+    name: DataTypes.STRING,
     maxParticipants: DataTypes.INTEGER,
     numbParticipants: DataTypes.INTEGER,
-    neighborhood: DataTypes.STRING,
-    city: DataTypes.STRING,
-    waitEvent: DataTypes.BOOLEAN,
-    confirmEvent: DataTypes.BOOLEAN
+    day: DataTypes.DATEONLY,
+    startTime: DataTypes.DATEONLY,
+    endTime: DataTypes.DATEONLY,
+    waitEvent: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Events',
