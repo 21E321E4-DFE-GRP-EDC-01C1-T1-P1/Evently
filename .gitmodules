@@ -1,0 +1,6 @@
+[submodule "evently-vue"]
+	path = evently-vue
+	url = git@github.com:21E321E4-DFE-GRP-EDC-01C1-T1-P1/evently-vue.git
+[submodule "evently-api"]
+	path = evently-api
+	url = git@github.com:21E321E4-DFE-GRP-EDC-01C1-T1-P1/evently-api.git
